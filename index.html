@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="en" >
 <head>
-
- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
+<script type="text/javascript" src= "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+ <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
 
 <script>
 $(document).ready(function(){
     var socket = io.connect('http://127.0.0.1:5000/raspiconnect');
     socket.on('connect', function() {
-                socket.emit('my event', {data: 'I\'m connected!'});
-                alert("connected");
+                socket.emit('my event', {data: 'Rpi connected!'});
+               // alert("connected");
             });
     socket.on('my response', function(msg) {
     	alert(msg.data);
